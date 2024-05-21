@@ -1,0 +1,52 @@
+.flag {
+    height: 40px; /* Adjust the height of the flag */
+    width: 60px; /* Adjust the width of the flag */
+    margin-right: 10px; /* Adjust the margin between the flags and the header content */
+    display: inline-block;
+}
+
+.flag-left {
+    background-color: white;
+}
+
+.flag-right {
+    background-color: red;
+}
+
+/* Irish Flag */
+.flag-left .green {
+    height: 33.33%;
+    width: 100%;
+    background-color: green;
+}
+
+.flag-left .white {
+    height: 33.33%;
+    width: 100%;
+    background-color: white;
+}
+
+.flag-left .orange {
+    height: 33.33%;
+    width: 100%;
+    background-color: orange;
+}
+
+/* Chinese Flag */
+.flag-right .red {
+    height: 33.33%;
+    width: 100%;
+    background-color: red;
+}
+
+.flag-right .yellow {
+    height: 33.33%;
+    width: 100%;
+    background-color: yellow;
+}
+
+.flag-right .black {
+    height: 33.33%;
+    width: 100%;
+    background-color: black;
+}
