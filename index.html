@@ -3,15 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Wedding Website</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown Timer</title>
     <style>
         /* Style for the countdown */
@@ -25,7 +16,7 @@
             padding: 20px;
             border: 5px solid black;
             border-radius: 10px;
-            width: 300px;
+            width: 500px;
             margin: auto;
             white-space: nowrap; /* Prevent line breaks */
         }
@@ -37,47 +28,32 @@
 
 <script>
     // Set the target date for the countdown (2026-04-15 format)
-    v
+    var targetDate = new Date("2024-12-31").getTime();
 
-    <header>
-        <h1>Welcome to Our Wedding in China!</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="transport.html">Transport</a></li>
-                <li><a href="food.html">Food</a></li>
-                <li><a href="payments.html">Payments</a></li>
-                <li><a href="culture.html">Culture</a></li>
-                <li><a href="accommodation.html">Accommodation</a></li>
-                <li><a href="getting-around.html">Getting Around</a></li>
-                <li><a href="wedding.html">Wedding</a></li>
-                <li><a href="apps.html">Apps</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
-            </ul>
-        </nav>
-    </header>
+    // Update the countdown every second
+    var countdownInterval = setInterval(function() {
+        // Get the current date and time
+        var now = new Date().getTime();
 
-    <section id="hero">
-        <div class="hero-content">
-            <h2>Join Us for a Memorable Celebration</h2>
-            <p>We are thrilled to have you join us in China for our wedding. This website contains all the information you need for your trip and the wedding celebration.</p>
-        </div>
-    </section>
+        // Calculate the time remaining until the target date
+        var timeRemaining = targetDate - now;
 
-    <main>
-        <section id="introduction">
-            <h2>About Our Wedding</h2>
-            <p>We are excited to share this special day with our friends and family from Ireland and China. Here you will find details about the wedding events, travel information, and useful tips to make your stay enjoyable.</p>
-        </section>
+        // Calculate days remaining
+        var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
 
-        <section id="details">
-            <!-- Existing Sections -->
-        </section>
-    </main>
+        // Format the countdown string with leading zeros
+        var countdownString = ('0' + days).slice(-2) + "d " +
+                            
+        // Display the countdown
+        document.getElementById("countdown").innerHTML = countdownString;
 
-    <footer>
-        <p>Thank you for joining us in this celebration. We hope you have a wonderful time in China!</p>
-        <p>Any issues or inquiries please email me at harkinkevin94@gmail.com</p>
-    </footer>
+        // If the countdown is over, stop updating it
+        if (timeRemaining < 0) {
+            clearInterval(countdownInterval);
+            document.getElementById("countdown").innerHTML = "Countdown Over";
+        }
+    }, 1000); // Update every hour
+</script>
+
 </body>
 </html>
